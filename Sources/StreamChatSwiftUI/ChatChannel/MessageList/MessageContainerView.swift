@@ -123,7 +123,7 @@ public struct MessageContainerView<Factory: ViewFactory>: View {
                             handleGestureForMessage(showsMessageActions: true)
                         }
                     }
-                    .onLongPressGesture(perform: {
+                    .onLongPressGesture(minimumDuration: messageListConfig.messagePopoverPressDuration, perform: {
                         if !message.isDeleted {
                             handleGestureForMessage(showsMessageActions: true)
                         }

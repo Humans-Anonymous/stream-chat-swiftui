@@ -17,6 +17,7 @@ public struct MessageListConfig {
         dateIndicatorPlacement: DateIndicatorPlacement = .overlay,
         pageSize: Int = 25,
         messagePopoverEnabled: Bool = true,
+        messagePopoverPressDuration: CGFloat = 0.5,
         doubleTapOverlayEnabled: Bool = false,
         becomesFirstResponderOnOpen: Bool = false,
         updateChannelsFromMessageList: Bool = false,
@@ -41,6 +42,7 @@ public struct MessageListConfig {
         self.dateIndicatorPlacement = dateIndicatorPlacement
         self.pageSize = pageSize
         self.messagePopoverEnabled = messagePopoverEnabled
+        self.messagePopoverPressDuration = messagePopoverPressDuration
         self.doubleTapOverlayEnabled = doubleTapOverlayEnabled
         self.becomesFirstResponderOnOpen = becomesFirstResponderOnOpen
         self.updateChannelsFromMessageList = updateChannelsFromMessageList
@@ -66,6 +68,7 @@ public struct MessageListConfig {
     public let dateIndicatorPlacement: DateIndicatorPlacement
     public let pageSize: Int
     public let messagePopoverEnabled: Bool
+    public let messagePopoverPressDuration: CGFloat
     public let doubleTapOverlayEnabled: Bool
     public let becomesFirstResponderOnOpen: Bool
     public let updateChannelsFromMessageList: Bool
