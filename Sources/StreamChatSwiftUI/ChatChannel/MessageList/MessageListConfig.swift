@@ -91,9 +91,14 @@ public struct MessagePaddings {
 
     /// Horizontal padding for messages.
     public let horizontal: CGFloat
+    public let quotedViewPadding: CGFloat
 
-    public init(horizontal: CGFloat = 8) {
+    public init(
+        horizontal: CGFloat = 8,
+        quotedViewPadding: CGFloat = 8
+    ) {
         self.horizontal = horizontal
+        self.quotedViewPadding = quotedViewPadding
     }
 }
 
@@ -134,7 +139,7 @@ public struct MessageDisplayOptions {
         overlayDateLabelSize: CGFloat = 40,
         lastInGroupHeaderSize: CGFloat = 0,
         newMessagesSeparatorSize: CGFloat = 50,
-        minimumSwipeGestureDistance: CGFloat = 10,
+        minimumSwipeGestureDistance: CGFloat = 20,
         currentUserMessageTransition: AnyTransition = .identity,
         otherUserMessageTransition: AnyTransition = .identity,
         shouldAnimateReactions: Bool = true,

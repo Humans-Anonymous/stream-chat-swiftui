@@ -36,6 +36,7 @@ public struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
     @State private var pendingKeyboardUpdate: Bool?
     @State private var scrollDirection = ScrollDirection.up
     @State private var unreadMessagesBannerShown = false
+    @State private var unreadButtonDismissed = false
 
     private var messageRenderingUtil = MessageRenderingUtil.shared
     private var skipRenderingMessageIds = [String]()
@@ -202,6 +203,7 @@ public struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
                         }
                         .id(listId)
                     }
+                    .delayedRendering()
                     .modifier(factory.makeMessageListModifier())
                     .modifier(ScrollTargetLayoutModifier(enabled: loadingNextMessages))
                 }
@@ -292,14 +294,15 @@ public struct MessageListView<Factory: ViewFactory>: View, KeyboardReadable {
             }
         })
         .overlay(
-            (channel.unreadCount.messages > 0 && !unreadMessagesBannerShown && !isMessageThread) ?
+            (channel.unreadCount.messages > 0 && !unreadMessagesBannerShown && !isMessageThread && !unreadButtonDismissed) ?
                 factory.makeJumpToUnreadButton(
                     channel: channel,
                     onJumpToMessage: {
                         _ = onJumpToMessage?(firstUnreadMessageId ?? .unknownMessageId)
                     },
                     onClose: {
-                        firstUnreadMessageId = nil
+                        chatClient.channelController(for: channel.cid).markRead()
+                        unreadButtonDismissed = true
                     }
                 ) : nil
         )

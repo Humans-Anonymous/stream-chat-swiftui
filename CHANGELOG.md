@@ -3,7 +3,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 # Upcoming
 
+### 🐞 Fixed
+- Rare crash when accessing frame of the view [#607](https://github.com/GetStream/stream-chat-swiftui/pull/607)
+- `ChatChannelListView` navigation did not trigger when using a custom container and its body reloaded [#609](https://github.com/GetStream/stream-chat-swiftui/pull/609)
+- Channel was sometimes not marked as read when tapping the x on the unread message pill in the message list [#610](https://github.com/GetStream/stream-chat-swiftui/pull/610)
+
+# [4.63.0](https://github.com/GetStream/stream-chat-swiftui/releases/tag/4.63.0)
+_September 12, 2024_
+
+### ✅ Added
+- Configuration for padding for quoted message views [#598](https://github.com/GetStream/stream-chat-swiftui/pull/598)
+
 ### 🔄 Changed
+- Improved subtitle info in pinned messages view [#594](https://github.com/GetStream/stream-chat-swiftui/pull/594)
+- The `image(for channel: ChatChannel)` in `ChannelHeaderLoader` is now open [#595](https://github.com/GetStream/stream-chat-swiftui/pull/595) 
+- FlagMessage Action is now only shown if the user has a permission to perform the action [#599](https://github.com/GetStream/stream-chat-swiftui/pull/599) 
+
+### 🐞 Fixed
+- Typing users did not update reliably in the message list [#591](https://github.com/GetStream/stream-chat-swiftui/pull/591)
+- Channel was sometimes marked as read when the first unread message was one of the first not visible messages [#593](https://github.com/GetStream/stream-chat-swiftui/pull/593)
+- Jump to first unread message button in the message list was not possible to close in some cases [#600](https://github.com/GetStream/stream-chat-swiftui/pull/600)
 
 # [4.62.0](https://github.com/GetStream/stream-chat-swiftui/releases/tag/4.62.0)
 _August 16, 2024_
