@@ -4,9 +4,33 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 # Upcoming
 
 ### 🐞 Fixed
+- Fix crash when opening message overlay in iPad with a TabBar [#627](https://github.com/GetStream/stream-chat-swiftui/pull/627)
+
+# [4.65.0](https://github.com/GetStream/stream-chat-swiftui/releases/tag/4.65.0)
+_October 18, 2024_
+
+### ✅ Added
+- New Thread List UI Component [#621](https://github.com/GetStream/stream-chat-swiftui/pull/621)
+- Handles marking a thread read in `ChatChannelViewModel` [#621](https://github.com/GetStream/stream-chat-swiftui/pull/621)
+- Adds `ViewFactory.makeChannelListItemBackground` [#621](https://github.com/GetStream/stream-chat-swiftui/pull/621)
+### 🐞 Fixed
+- Fix Channel List loading view shimmering effect not working [#621](https://github.com/GetStream/stream-chat-swiftui/pull/621)
+- Fix Channel List not preselecting the Channel on iPad [#621](https://github.com/GetStream/stream-chat-swiftui/pull/621)
+### 🔄 Changed
+- Channel List Item has now a background color when it is selected on iPad [#621](https://github.com/GetStream/stream-chat-swiftui/pull/621)
+
+# [4.64.0](https://github.com/GetStream/stream-chat-swiftui/releases/tag/4.64.0)
+_October 03, 2024_
+
+### 🔄 Changed
+- Improves Poll voting UX by making it possible to tap on the whole option as well [#612](https://github.com/GetStream/stream-chat-swiftui/pull/612)
+### 🐞 Fixed
 - Rare crash when accessing frame of the view [#607](https://github.com/GetStream/stream-chat-swiftui/pull/607)
 - `ChatChannelListView` navigation did not trigger when using a custom container and its body reloaded [#609](https://github.com/GetStream/stream-chat-swiftui/pull/609)
 - Channel was sometimes not marked as read when tapping the x on the unread message pill in the message list [#610](https://github.com/GetStream/stream-chat-swiftui/pull/610)
+- Channel was sometimes not selected if `ChatChannelViewModel.selectedChannelId` was set to a channel created a moments ago [#611](https://github.com/GetStream/stream-chat-swiftui/pull/611)
+- Fix the poll vote progress view not having full width when the Poll is closed [#612](https://github.com/GetStream/stream-chat-swiftui/pull/612)
+- Fix the last vote author not accurate in the channel preview [#612](https://github.com/GetStream/stream-chat-swiftui/pull/612)
 
 # [4.63.0](https://github.com/GetStream/stream-chat-swiftui/releases/tag/4.63.0)
 _September 12, 2024_
