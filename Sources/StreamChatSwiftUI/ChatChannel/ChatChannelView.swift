@@ -42,7 +42,7 @@ public struct ChatChannelView<Factory: ViewFactory>: View, KeyboardReadable {
         ZStack {
             if let channel = viewModel.channel {
                 VStack(spacing: 0) {
-                    if !viewModel.messages.isEmpty {
+                    if !viewModel.messages.isEmpty || utils.messageListConfig.shouldAlwaysShowMessageList {
                         MessageListView(
                             factory: factory,
                             channel: channel,
