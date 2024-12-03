@@ -3,11 +3,40 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 # Upcoming
 
+### 🔄 Changed
+
+# [4.68.0](https://github.com/GetStream/stream-chat-swiftui/releases/tag/4.68.0)
+_December 03, 2024_
+
+### 🐞 Fixed
+- Fix showing giphy message in the channel list [#669](https://github.com/GetStream/stream-chat-swiftui/pull/669)
+- Fix message list scroll not working when drag gestured is initiated from a message [#671](https://github.com/GetStream/stream-chat-swiftui/pull/671)
+
+# [4.67.0](https://github.com/GetStream/stream-chat-swiftui/releases/tag/4.67.0)
+_November 25, 2024_
+
+### ✅ Added
+- Make `VoiceRecordingButton` public [#658](https://github.com/GetStream/stream-chat-swiftui/pull/658)
+- Add config to skip edited label for some messages [#660](https://github.com/GetStream/stream-chat-swiftui/pull/665)
+### 🐞 Fixed
+- Fix message long press taking too much time to show actions [#648](https://github.com/GetStream/stream-chat-swiftui/pull/648)
+- Fix rendering link attachment preview with other attachment types [#659](https://github.com/GetStream/stream-chat-swiftui/pull/659)
+- Fix not using colors from the palette in some of the poll views [#661](https://github.com/GetStream/stream-chat-swiftui/pull/661)
+- Fix a rare crash when handling list change in the `ChatChannelViewModel` [#663](https://github.com/GetStream/stream-chat-swiftui/pull/663)
+### 🔄 Changed
+- Message composer now uses `.uploadFile` capability when showing attachment picker icon [#646](https://github.com/GetStream/stream-chat-swiftui/pull/646)
+- `ChannelInfoView` now uses `.updateChannelMembers` capability to show "Add Users" button [#651](https://github.com/GetStream/stream-chat-swiftui/pull/651)
+
+# [4.66.0](https://github.com/GetStream/stream-chat-swiftui/releases/tag/4.66.0)
+_November 06, 2024_
+
 ### ✅ Added
 - Add support for Channel Search in the Channel List [#628](https://github.com/GetStream/stream-chat-swiftui/pull/628)
 ### 🐞 Fixed
 - Fix crash when opening message overlay in iPad with a TabBar [#627](https://github.com/GetStream/stream-chat-swiftui/pull/627)
 - Only show Leave Group option if the user has leave-channel permission [#633](https://github.com/GetStream/stream-chat-swiftui/pull/633)
+- Fix Channel List stuck in Empty View State in rare conditions [#639](https://github.com/GetStream/stream-chat-swiftui/pull/639)
+- Fix a bug with photo attachment picker indicator not displaying [#640](https://github.com/GetStream/stream-chat-swiftui/pull/640)
 
 # [4.65.0](https://github.com/GetStream/stream-chat-swiftui/releases/tag/4.65.0)
 _October 18, 2024_
@@ -43,8 +72,8 @@ _September 12, 2024_
 
 ### 🔄 Changed
 - Improved subtitle info in pinned messages view [#594](https://github.com/GetStream/stream-chat-swiftui/pull/594)
-- The `image(for channel: ChatChannel)` in `ChannelHeaderLoader` is now open [#595](https://github.com/GetStream/stream-chat-swiftui/pull/595) 
-- FlagMessage Action is now only shown if the user has a permission to perform the action [#599](https://github.com/GetStream/stream-chat-swiftui/pull/599) 
+- The `image(for channel: ChatChannel)` in `ChannelHeaderLoader` is now open [#595](https://github.com/GetStream/stream-chat-swiftui/pull/595)
+- FlagMessage Action is now only shown if the user has a permission to perform the action [#599](https://github.com/GetStream/stream-chat-swiftui/pull/599)
 
 ### 🐞 Fixed
 - Typing users did not update reliably in the message list [#591](https://github.com/GetStream/stream-chat-swiftui/pull/591)

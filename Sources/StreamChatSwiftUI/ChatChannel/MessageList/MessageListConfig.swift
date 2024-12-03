@@ -34,6 +34,7 @@ public struct MessageListConfig {
         markdownSupportEnabled: Bool = true,
         userBlockingEnabled: Bool = false,
         shouldAlwaysShowMessageList: Bool = false
+        skipEditedMessageLabel: @escaping (ChatMessage) -> Bool = { _ in false }
     ) {
         self.messageListType = messageListType
         self.typingIndicatorPlacement = typingIndicatorPlacement
@@ -60,6 +61,7 @@ public struct MessageListConfig {
         self.markdownSupportEnabled = markdownSupportEnabled
         self.userBlockingEnabled = userBlockingEnabled
         self.shouldAlwaysShowMessageList = shouldAlwaysShowMessageList
+        self.skipEditedMessageLabel = skipEditedMessageLabel
     }
 
     public let messageListType: MessageListType
@@ -87,6 +89,7 @@ public struct MessageListConfig {
     public let markdownSupportEnabled: Bool
     public let userBlockingEnabled: Bool
     public let shouldAlwaysShowMessageList: Bool
+    public let skipEditedMessageLabel: (ChatMessage) -> Bool
 }
 
 /// Contains information about the message paddings.
