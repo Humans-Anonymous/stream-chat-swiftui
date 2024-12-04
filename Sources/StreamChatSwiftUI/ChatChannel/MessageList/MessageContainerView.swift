@@ -121,11 +121,14 @@ public struct MessageContainerView<Factory: ViewFactory>: View {
                             handleGestureForMessage(showsMessageActions: true)
                         }
                     }
-                    .onLongPressGesture(minimumDuration: messageListConfig.messagePopoverPressDuration, perform: {
-                        if !message.isDeleted {
-                            handleGestureForMessage(showsMessageActions: true)
-                        }
-                    })
+                    .highPriorityGesture(
+                        LongPressGesture(minimumDuration: messageListConfig.messagePopoverPressDuration)
+                            .onEnded { _ in
+                                if !message.isDeleted {
+                                    handleGestureForMessage(showsMessageActions: true)
+                                }
+                            }
+                    )
                     .offset(x: min(self.offsetX, maximumHorizontalSwipeDisplacement))
                     .simultaneousGesture(
                         DragGesture(
