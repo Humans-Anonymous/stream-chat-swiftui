@@ -33,7 +33,7 @@ public struct MessageListConfig {
         isMessageEditedLabelEnabled: Bool = true,
         markdownSupportEnabled: Bool = true,
         userBlockingEnabled: Bool = false,
-        shouldAlwaysShowMessageList: Bool = false
+        shouldAlwaysShowMessageList: Bool = false,
         skipEditedMessageLabel: @escaping (ChatMessage) -> Bool = { _ in false }
     ) {
         self.messageListType = messageListType
